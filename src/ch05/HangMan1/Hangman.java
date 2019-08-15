@@ -4,6 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// 메서드.
+// HangMan() : 기본생성자.
+// playGame() : 게임진행.
+// checkChar() : 입력문자 체크.
+// drawMan() : 실패 횟수에 따라 교수대에 사람을 그림.
+// readChar() : 사용자에게 글자를 입력 받음.
 public class Hangman {
 	
 	String hiddenString; // 숨겨진 문자열 (문제)
@@ -52,12 +58,12 @@ public class Hangman {
 		
 	}
 	
-	// 입력문자 조사.
+	// 입력문자 조사. (입력 문자 1글자를 받음)
 	public void checkChar(char guess) {
 		
-		boolean already = false;
+		boolean already = false; // 이미 입력한 것인지 여부를 체크할 boolean 형 변수 선언.
 		
-		for(int i = 0; i < inputString.length() ; i++) {
+		for(int i = 0; i < inputString.length(); i++) {
 			
 			if(inputString.charAt(i) == guess) { // 이미 입력한 문자인지 조사.
 				
@@ -72,7 +78,7 @@ public class Hangman {
 			
 			inputString.append(guess); // 입력한 문자들의 모임에 추가.
 			
-			boolean success = false;
+			boolean success = false; // 맞췄는지 여부를 확인하기 위한 boolean 변수 선언.
 			
 			for(int i = 0; i < hiddenString.length(); i++) { 
 				
@@ -95,8 +101,9 @@ public class Hangman {
 	
 	public void drawMan() {
 		
-		System.out.println(" ┌─────┐");
-		System.out.println(" │          │");
+		System.out.println("    ┌───┐");
+		System.out.println("    │      │");
+		
 		
 		switch(failed) { // 실패 횟수에 따라 교수대에 사람을 그림.
 		
