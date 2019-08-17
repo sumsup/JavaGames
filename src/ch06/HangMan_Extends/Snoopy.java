@@ -1,6 +1,8 @@
 package ch06.HangMan_Extends;
 
-public class Snoopy extends Dog
+public class Snoopy extends Dog 
+// 이렇게 sub 를 만들면 super를 이어서 만드는 효과.
+// super의 메서드 뿐만 아니라 멤버변수까지도 사용가능.
 {
 	
 	public Snoopy()
